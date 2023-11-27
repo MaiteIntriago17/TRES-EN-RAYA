@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Tres en Raya</title>
+</head>
+<body>
+    <div class="arrastrar">
+        <div class="cajaArrastre">
+            <div class="cruz" draggable="true" 
+            ondragstart="arrastrar(event)" id="cruz1">                
+            </div>
+            <div class="cruz" draggable="true" 
+            ondragstart="arrastrar(event)" id="cruz2">           
+            </div>
+            <div class="cruz" draggable="true" 
+            ondragstart="arrastrar(event)" id="cruz3">          
+            </div>
+            <div class="cruz" draggable="true" 
+            ondragstart="arrastrar(event)" id="cruz4">          
+            </div>
+            <div class="cruz" draggable="true" 
+            ondragstart="arrastrar(event)" id="cruz5">          
+            </div>
+        </div>
+    </div>
+    <div class="tablero">
+        <div class="caja" 
+            ondrop="soltar(event)" ondragover="permitirSoltar(event)"></div>
+        <div class="caja" ondrop="soltar(event)" ondragover="permitirSoltar(event)"></div>
+        <div class="caja" ondrop="soltar(event)" ondragover="permitirSoltar(event)"></div>
+        <div class="caja" ondrop="soltar(event)" ondragover="permitirSoltar(event)"></div>
+        <div class="caja" ondrop="soltar(event)" ondragover="permitirSoltar(event)"></div>
+        <div class="caja" ondrop="soltar(event)" ondragover="permitirSoltar(event)"></div>
+        <div class="caja" ondrop="soltar(event)" ondragover="permitirSoltar(event)"></div>
+        <div class="caja" ondrop="soltar(event)" ondragover="permitirSoltar(event)"></div>
+        <div class="caja" ondrop="soltar(event)" ondragover="permitirSoltar(event)"></div>
+    </div>
+    <div class="arrastrar">
+        <div class="cajaArrastre">
+            <div class="circulo" draggable="true" 
+            ondragstart="arrastrar(event)" id="circulo1">                
+            </div>
+            <div class="circulo" draggable="true" 
+            ondragstart="arrastrar(event)" id="circulo2">                
+            </div>
+            <div class="circulo" draggable="true" 
+            ondragstart="arrastrar(event)" id="circulo3">                
+            </div>
+            <div class="circulo" draggable="true" 
+            ondragstart="arrastrar(event)" id="circulo4">                
+            </div>
+            <div class="circulo" draggable="true" 
+            ondragstart="arrastrar(event)" id="circulo5">                
+            </div>
+        </div>
+    </div>
+    <!--<script src="script.js"></script>-->
+    <!-- Este es un comentario en HTML -->
+    <script>
+        /*var a;
+        var b=2;
+        a=5;
+        var c=a+b;
+        console.log("Hola mundo");
+        console.log("Variable a" + a);
+        console.log("Resultado: " + c);*/
+
+        function permitirSoltar(event) {
+            event.preventDefault();
+        }
+
+        function arrastrar(event) {
+            event.dataTransfer.setData("text", event.target.id);
+        }
+
+        function soltar(event) {
+            event.preventDefault;
+            var datos = event.dataTransfer.getData("text");
+            event.target.appendChild(document.getElementById(datos));
+        }
+
+    </script>
+</body>
+</html>
